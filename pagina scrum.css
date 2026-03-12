@@ -1,0 +1,116 @@
+*{
+    margin: 0px; padding: 0px; box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Times New Roman', Times, serif; background-color: #121212; color: #f5f5f5;
+}
+header.cabecera{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background-color:#1b1b1b;
+    border-bottom:2px solid #333;
+}
+.logo_titulo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.logo_titulo img{
+    width:70px;
+}
+.logo_titulo h1{
+    font-size:1.8rem;
+}
+header.cabecera nav{
+    display:flex;
+    gap:25px;
+}
+header.cabecera nav a{
+    color:#66c0f4;
+    font-weight:bold;
+    text-decoration:none;
+    transition:0.3s;
+}
+header.cabecera nav a:hover{
+    color:white;
+}
+section.catalogo{
+    text-align: center; margin: 60px auto; width: 100%;
+}
+section.catalogo h3{
+    text-align: center; margin-bottom: 30px;
+}
+section.catalogo div{
+    display: inline-block; padding: 30px 60px; font-size: 1.3rem; border-radius: 10px; 
+    background-color: #1b1b1b; border: 2px solid #333; cursor: pointer; margin: 10px; transition: 0.3s;
+}
+section.catalogo div:hover{
+    transform: scale(1.05); background-color: #333;
+}
+section.plataformas{
+    text-align: center; margin: 80px auto; width: 100%;
+}
+section.plataformas h3{
+    margin-bottom: 20px;
+}
+section.plataformas div{
+    display: inline-block; padding: 25px 60px; font-size: 1.2rem; border-radius: 10px; background-color: #1b1b1b; border: 2px solid #333; cursor: pointer; margin: 10px; transition: 0.3s;
+}
+section.plataformas div:hover{
+    background-color: #333; transform: scale(1.05);
+}
+section.tarjetas{
+    display: flex; flex-direction: column; align-items: center; gap: 30px; margin: 20px;
+}
+section.tarjetas article{
+    width: 90%; max-width: 1000px; padding: 20px; display: flex; gap: 20px; border-radius: 10px; transition: transform 0.3s, border-color 0.3s; flex-wrap: wrap; 
+}
+section.tarjetas article img{
+    width: 300px; height: auto; border-radius: 8px; flex-shrink: 0;
+}
+section.tarjetas article .descripcion, section.tarjetas article .precio{
+    flex: 1;
+}
+section.tarjetas article .boton{
+    background-color: #66c0f4; color: white; border: none; padding: 8px 15px; font-size: 0.9rem; width: auto; font-weight: bold; cursor: pointer; border-radius: 5px;
+}
+section.tarjetas article .boton:hover{
+    background-color: #5290c9;
+}
+footer.pie_pag, footer#pie_pag{
+    background-color: #1b1b1b; text-align: center; padding: 20px; border-top: 2px solid #333; font-size: 0.9rem; color: #f5f5f5;
+    hr{
+        border: 0.5px solid #333; margin: 10px 0;
+    }
+    a{
+        color: #66c0f4; text-decoration: none;
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+.volver_arriba{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #66c0f4;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(102,192,244,0.6);
+    transition: 0.3s;
+}
+.volver_arriba:hover{
+    background-color: #5290c9;
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(102,192,244,0.9);
+}
