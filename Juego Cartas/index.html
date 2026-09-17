@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrar las parejas de cartas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script defer src="logica.js"></script>
+</head>
+<body>
+    <main class="game-container">
+        <!-- Encabezado con información del juego --> 
+        <header class="game-header">
+            <h1>Derechos de la Naturaleza en Colombia</h1>
+            <strong class="subtitulo-nombre">Jonatan Escudero Valencia - Estudiante profesional de Seguridad y Salud En El Trabajo</strong>
+            <p class="subtitulo-nombre">N° Curso: 252519397_193</p>
+            <div class="stats">
+                <span>Aciertos: <strong id="score">0</strong>/6</span>
+                <span>Intentos: <strong id="attempts">0</strong></span>
+                <button id="btn-instrucciones" class="btn-secondary">Cómo Jugar</button>
+            </div>
+        </header>
+
+        <!-- Tablero dinámico donde se mostraran las cartas -->
+        <section id="game-board" class="game-board" aria-label="Tablero de juego"></section>
+
+        <!-- Ventana Modal 1: Mensaje Informativo (Al acertar un par) -->
+        <div id="info-modal" class="modal hidden" role="dialog" aria-modal="true">
+            <div class="modal-content">
+                <h2 id="info-title">¡Par Encontrado!</h2>
+                <p id="info-text"></p>
+                <button id="close-info-btn">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Ventana Modal 2: Pregunta (Al fallar un par) -->
+        <div id="quiz-modal" class="modal hidden" role="dialog" aria-modal="true">
+            <div class="modal-content">
+                <span class="badge" id="quiz-topic">Tema</span>
+                <h3 id="quiz-question">Aquí irá la pregunta...</h3>
+                <div id="quiz-options" class="options-container"></div>
+                <!-- Las opciones de respuesta se generarán con JS -->
+                <p id="quiz-feedback" class="feedback hidden"></p>
+                <button id="close-quiz-btn" class="hidden">Continuar juego</button>
+            </div>
+        </div>
+
+        <!-- Ventana Modal 3: Victoria (Al encontrar todos los pares) -->
+        <div id="victory-modal" class="modal hidden" role="dialog" aria-modal="true">
+            <div class="modal-content victory-content">
+                <h2>¡Felicidades, has ganado!</h2>
+                <p>Has encontrado todos los pares sobre los Derechos de la Naturaleza.</p>
+                <div class="victory-stats">
+                <p>Intentos totales: <strong id="final-attempts">0</strong></p>
+                <p>Preguntas / Fallos: <strong id="final-failures">0</strong></p>
+                </div>
+                <button id="restart-btn">Jugar de nuevo</button>
+            </div>
+        </div>
+        <!-- Ventana Modal 4: Instrucciones y Temas -->
+        <div id="modal-instrucciones" class="modal hidden" role="dialog" aria-modal="true">
+            <div class="modal-content">
+                <h2>¿Cómo Jugar?</h2>
+                <div class="instrucciones-body">
+                    <p>Bienvenido al juego interactivo sobre los <strong>Derechos de la Naturaleza en Colombia</strong>. Pon a prueba tus conocimientos mientras juegas.</p>
+                    <ol>
+                        <li><strong>Encuentra las parejas:</strong> Haz clic en las cartas para voltearlas y encontrar los pares de conceptos coincidentes.</li>
+                        <li><strong>Sistema de aciertos:</strong> Cuando encuentres un par, las cartas cambiarán a color verde y se abrirá una ficha informativa.</li>
+                        <li><strong>Sistema de fallos y preguntas:</strong> Si te equivocas, se sumará un fallo y tendrás que responder una pregunta sobre la legislación ambiental en Colombia.</li>
+                    </ol>
+                    <h3>Temas que abordaremos:</h3>
+                    <ul>
+                        <li><strong>Origen Jurídico:</strong> Sentencia T-622/16 (Río Atrato), Amazonía como sujeto de derechos y fallos hito en Colombia.</li>
+                        <li><strong>Tensiones Jurídicas:</strong> Desafíos de implementación, el rol del Cuerpo de Guardianes y conflictos socioambientales.</li>
+                        <li><strong>Principios Culturales:</strong> Biocentrismo vs. Antropocentrismo, Derechos Bioculturales y el concepto del Buen Vivir (Sumak Kawsay).</li>
+                    </ul>
+                </div>
+                <button id="btn-cerrar-instrucciones" class="btn-primary">¡Entendido, a jugar!</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
